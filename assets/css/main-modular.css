@@ -1,0 +1,16 @@
+/**
+* Main Modular CSS for Wizards Wiffle Ball Club
+* This file imports all the modular CSS components
+*/
+
+/* Import Base Styles */
+@import 'base/variables.css';
+@import 'base/global.css';
+
+/* Import Component Styles */
+@import 'components/header.css';
+@import 'components/hero.css';
+@import 'components/rsvp.css';
+@import 'components/rules.css';
+@import 'components/field-layout.css';
+@import 'components/footer.css';

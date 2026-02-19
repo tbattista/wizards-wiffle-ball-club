@@ -1,0 +1,71 @@
+/**
+* Global CSS for Wizards Wiffle Ball Club
+*/
+
+/* Body Styles */
+body {
+  background-color: var(--background-color);
+  font-family: var(--default-font);
+}
+
+/* Baseball-inspired elements */
+.baseball-stitch {
+  position: relative;
+}
+
+/* Baseball diamond shape for certain elements */
+.diamond-shape {
+  position: relative;
+}
+
+.diamond-shape::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--highlight-color-1);
+  transform: rotate(45deg);
+  bottom: -10px;
+  left: calc(50% - 10px);
+  z-index: 1;
+}
+
+/* Button Styles */
+.btn-custom {
+  background-color: var(--highlight-color-1);
+  color: var(--contrast-color);
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: color-mix(in srgb, var(--highlight-color-1), transparent 15%);
+  color: var(--contrast-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+  
+  .hero p {
+    font-size: 18px;
+  }
+  
+  .rule-item {
+    margin-bottom: 20px;
+  }
+  
+  .field-tabs .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .dimension-item {
+    margin-bottom: 2rem;
+  }
+}

@@ -1,0 +1,30 @@
+/**
+* Variables for Wizards Wiffle Ball Club
+*/
+
+/* Custom Color Variables */
+:root { 
+  --background-color: #FDF5E6; /* Cream background */
+  --default-color: #333333; /* Default text color */
+  --heading-color: #0D1B2A; /* Navy blue for headings */
+  --accent-color: #1E6738; /* Green Monster green */
+  --surface-color: #ffffff; /* White surface */
+  --contrast-color: #ffffff; /* White contrast */
+  --highlight-color-1: #F4A300; /* Mustard */
+  --highlight-color-2: #B22222; /* Brick red */
+  
+  /* Override template variables */
+  --nav-color: var(--heading-color);
+  --nav-hover-color: var(--accent-color);
+  --nav-dropdown-color: var(--heading-color);
+  --nav-dropdown-hover-color: var(--accent-color);
+}
+
+/* Custom Font Styles */
+:root {
+  --heading-font: 'Roboto Slab', serif;
+  --default-font: 'Roboto', sans-serif;
+}
+
+/* Add Google Font for Roboto Slab */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700;800&display=swap');

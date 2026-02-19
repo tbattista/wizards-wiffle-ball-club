@@ -1,0 +1,24 @@
+{
+  "name": "West Fenway Park",
+  "description": "Our custom wiffle ball field is designed for optimal gameplay with proper distances for all ages. Scaled to dimentionally to the famed Fenway Park in Boston MA.",
+  "features": [
+    "4 Foot High Fence",
+    "Painted Lines and Batters Box",
+    "Score Board"
+  ],
+  "dimensions": {
+    "outfield": {
+      "leftField": "75 ft",
+      "centerField": "91.5 ft",
+      "rightField": "75ft / 90.7 ft"
+    },
+    "infield": {
+      "basePath": "45 ft",
+      "pitchersMound": "25 ft"
+    }
+  },
+  "images": {
+    "fieldView": "assets/img/Field.PNG",
+    "dimensions": "assets/img/field dims.png"
+  }
+}

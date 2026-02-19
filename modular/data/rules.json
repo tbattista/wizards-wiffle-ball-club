@@ -1,0 +1,31 @@
+{
+  "generalRules": [
+    "Game is designed for hit and run scoring",
+    "Ties/arguments/fouls will always go to the batter and or offence",
+    "Have fun score runs"
+  ],
+  "gameSetup": [
+    "This is a fun ALL AGES game. (must be atleast 6)",
+    "5 Inning Game",
+    "3 outs per inning",
+    "No gloves",
+    "Bats and balls provided",
+    "All bats must be standard yellow plastic wiffle ball bats (taped/customized is fine)"
+  ],
+  "battingRules": [
+    "Only adults can strike out",
+    "Swing and miss = strike 1 or 2",
+    "Foul ball = strike 1 or 2",
+    "Third strike = swing and miss or hit the strike target",
+    "No walks or hit-by-pitch"
+  ],
+  "pitchingRules": [
+    "Ball speed must be controlled and over the plate",
+    "Pitch speed should match the age/skill of batter",
+    "Pitchers will be warned for too much speed or inaccuracy"
+  ],
+  "fieldingRules": [
+    "Force outs by tagging the base",
+    "Tag outs by tagging the runner with the ball"
+  ]
+}
