@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Wizards Wiffle Ball Club website",
   "scripts": {
-    "start": "serve modular -s -l tcp://0.0.0.0:$PORT",
-    "dev": "serve modular -s"
+    "start": "node server.js",
+    "dev": "node server.js"
   },
   "dependencies": {
-    "serve": "^14.2.0"
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
   }
 }
