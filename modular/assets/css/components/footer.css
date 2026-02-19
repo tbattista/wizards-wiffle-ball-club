@@ -1,0 +1,25 @@
+/**
+* Footer Component CSS for Wizards Wiffle Ball Club
+*/
+
+/* Footer Styles */
+.footer {
+  background-color: var(--heading-color);
+}
+
+.footer .footer-about .logo span,
+.footer h4,
+.footer .footer-contact p,
+.footer .footer-contact p strong {
+  color: var(--surface-color);
+}
+
+.footer .social-links a {
+  border-color: var(--highlight-color-1);
+  color: var(--highlight-color-1);
+}
+
+.footer .social-links a:hover {
+  background-color: var(--highlight-color-1);
+  color: var(--heading-color);
+}

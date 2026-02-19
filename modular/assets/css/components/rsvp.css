@@ -1,0 +1,68 @@
+/**
+* RSVP Component CSS for Wizards Wiffle Ball Club
+*/
+
+/* RSVP Form Section */
+.rsvp-section {
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  padding: 60px 0;
+}
+
+.rsvp-section .section-title h2 {
+  color: var(--heading-color);
+}
+
+.rsvp-section .form-container {
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+.rsvp-section .form-container iframe {
+  height: 1200px;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .rsvp-section .col-lg-10 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Event Details Highlight */
+.event-details {
+  background-color: var(--highlight-color-1);
+  color: var(--contrast-color);
+  border-radius: 10px;
+  padding: 25px;
+  margin: 30px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  border-left: 8px solid var(--accent-color);
+}
+
+.event-details h3 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: var(--contrast-color);
+}
+
+.event-details .detail-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.event-details .detail-item i {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.event-details .detail-item strong {
+  margin-right: 8px;
+}

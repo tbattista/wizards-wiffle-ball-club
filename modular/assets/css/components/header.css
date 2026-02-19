@@ -1,0 +1,36 @@
+/**
+* Header Component CSS for Wizards Wiffle Ball Club
+*/
+
+/* Header Styles */
+.header .logo h1 {
+  font-family: var(--heading-font);
+  font-weight: 800;
+}
+
+/* Logo Styles */
+.header .logo img {
+  background-color: transparent !important;
+  mix-blend-mode: multiply; /* This helps with transparency on non-transparent images */
+  max-height: 40px; /* Make the header logo smaller */
+  width: auto;
+}
+
+/* Mobile Navigation Enhancements */
+@media (max-width: 1199px) {
+  .mobile-nav-toggle {
+    color: var(--heading-color);
+  }
+  
+  .navmenu ul {
+    background-color: var(--background-color);
+    border: 2px solid var(--accent-color);
+  }
+  
+  .navmenu a:hover, 
+  .navmenu .active, 
+  .navmenu .active:focus {
+    color: var(--accent-color);
+    font-weight: 700;
+  }
+}
