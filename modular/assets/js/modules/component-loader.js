@@ -39,6 +39,7 @@ export function loadAllComponents() {
   const componentPromises = [
     loadComponent('header-container', 'components/header.html'),
     loadComponent('hero-container', 'components/hero.html'),
+    loadComponent('schedule-container', 'components/schedule.html'),
     loadComponent('rsvp-container', 'components/rsvp.html'),
     loadComponent('game-setup-container', 'components/game-setup.html'),
     loadComponent('rules-container', 'components/rules.html'),

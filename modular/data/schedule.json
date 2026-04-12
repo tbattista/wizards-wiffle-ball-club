@@ -1,0 +1,71 @@
+{
+  "season": "2026",
+  "games": [
+    {
+      "id": 1,
+      "date": "2026-05-16",
+      "dateDisplay": "May 16",
+      "time": "TBD",
+      "opponent": "Opening Day Scrimmage",
+      "homeAway": "home",
+      "location": "West Fenway Park",
+      "status": "upcoming",
+      "result": null
+    },
+    {
+      "id": 2,
+      "date": "2026-06-07",
+      "dateDisplay": "Jun 7",
+      "time": "4:05 PM",
+      "opponent": "Club Night Game",
+      "homeAway": "home",
+      "location": "West Fenway Park",
+      "status": "upcoming",
+      "result": null
+    },
+    {
+      "id": 3,
+      "date": "2026-07-12",
+      "dateDisplay": "Jul 12",
+      "time": "4:05 PM",
+      "opponent": "Mid-Summer Classic",
+      "homeAway": "home",
+      "location": "West Fenway Park",
+      "status": "upcoming",
+      "result": null
+    },
+    {
+      "id": 4,
+      "date": "2026-08-09",
+      "dateDisplay": "Aug 9",
+      "time": "4:05 PM",
+      "opponent": "Dog Days Doubleheader",
+      "homeAway": "home",
+      "location": "West Fenway Park",
+      "status": "upcoming",
+      "result": null
+    },
+    {
+      "id": 5,
+      "date": "2026-09-13",
+      "dateDisplay": "Sep 13",
+      "time": "3:05 PM",
+      "opponent": "End of Summer Showdown",
+      "homeAway": "home",
+      "location": "West Fenway Park",
+      "status": "upcoming",
+      "result": null
+    },
+    {
+      "id": 6,
+      "date": "2026-10-04",
+      "dateDisplay": "Oct 4",
+      "time": "1:05 PM",
+      "opponent": "Club Championship",
+      "homeAway": "home",
+      "location": "West Fenway Park",
+      "status": "upcoming",
+      "result": null
+    }
+  ]
+}
