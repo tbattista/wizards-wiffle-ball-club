@@ -3,10 +3,10 @@
   "games": [
     {
       "id": 1,
-      "date": "2026-05-16",
-      "dateDisplay": "May 16",
-      "time": "TBD",
-      "opponent": "Opening Day Scrimmage",
+      "date": "2026-05-30",
+      "dateDisplay": "May 30",
+      "time": "12:00 PM",
+      "opponent": "Opening Day — Birthday Cookout",
       "homeAway": "home",
       "location": "West Fenway Park",
       "status": "upcoming",
