@@ -97,17 +97,62 @@ export async function loadScheduleData() {
       '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
     }[c]));
 
-    const calHref = g => {
-      const dt = g.dateObj;
+    const pad = n => String(n).padStart(2, '0');
+
+    const parseTime = (timeStr) => {
+      const m = /^(\d{1,2}):(\d{2})\s*([AaPp][Mm])?$/.exec(String(timeStr || '').trim());
+      if (!m) return { h: 16, m: 5 };
+      let h = parseInt(m[1], 10);
+      const min = parseInt(m[2], 10);
+      const ap = (m[3] || '').toUpperCase();
+      if (ap === 'PM' && h < 12) h += 12;
+      if (ap === 'AM' && h === 12) h = 0;
+      return { h, m: min };
+    };
+
+    const localStamp = (dt, h, m) => {
       const y = dt.getFullYear();
-      const m = String(dt.getMonth() + 1).padStart(2, '0');
-      const d = String(dt.getDate()).padStart(2, '0');
-      const start = `${y}${m}${d}T160500`;
-      const end = `${y}${m}${d}T190500`;
+      const mo = pad(dt.getMonth() + 1);
+      const d = pad(dt.getDate());
+      return `${y}${mo}${d}T${pad(h)}${pad(m)}00`;
+    };
+
+    const googleHref = g => {
+      const { h, m } = parseTime(g.time);
+      const start = localStamp(g.dateObj, h, m);
+      const end = localStamp(g.dateObj, h + 3, m);
       const text = encodeURIComponent(`Wizards Wiffle Ball: ${g.opponent}`);
       const location = encodeURIComponent(`${g.location}, 1 W Pontiac St, Warwick, RI 02886`);
       return `https://www.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${start}/${end}&location=${location}`;
     };
+
+    const icsContent = g => {
+      const { h, m } = parseTime(g.time);
+      const start = localStamp(g.dateObj, h, m);
+      const end = localStamp(g.dateObj, h + 3, m);
+      const stamp = localStamp(new Date(), new Date().getHours(), new Date().getMinutes());
+      const uid = `wwbc-${g.id}-${start}@wizardswiffleball`;
+      return [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Wizards Wiffle Ball Club//EN',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        `UID:${uid}`,
+        `DTSTAMP:${stamp}`,
+        `DTSTART:${start}`,
+        `DTEND:${end}`,
+        `SUMMARY:Wizards Wiffle Ball: ${g.opponent}`,
+        `LOCATION:${g.location}\\, 1 W Pontiac St\\, Warwick\\, RI 02886`,
+        'DESCRIPTION:Wizards Wiffle Ball Club game. See wizardswiffleball.club for details.',
+        'END:VEVENT',
+        'END:VCALENDAR'
+      ].join('\r\n');
+    };
+
+    const icsByGameId = {};
+    games.forEach(g => { icsByGameId[g.id] = icsContent(g); });
 
     grid.innerHTML = games.map((g, i) => {
       const isNext = i === nextIdx;
@@ -132,12 +177,36 @@ export async function loadScheduleData() {
               <div><i class="bi bi-geo-alt"></i> ${escape(g.location)}</div>
             </div>
             <div class="schedule-actions">
-              <a class="schedule-cal-link" href="${calHref(g)}" target="_blank" rel="noopener"><i class="bi bi-calendar-plus"></i> Add to Calendar</a>
+              <span class="schedule-cal-label">Add to Calendar:</span>
+              <a class="schedule-cal-btn" href="${googleHref(g)}" target="_blank" rel="noopener" title="Google Calendar" aria-label="Add to Google Calendar">
+                <i class="bi bi-google"></i>
+              </a>
+              <a class="schedule-cal-btn" href="#" data-ics-game="${g.id}" title="Apple Calendar / .ics" aria-label="Download .ics for Apple Calendar">
+                <i class="bi bi-apple"></i>
+              </a>
             </div>
           </div>
         </div>
       `;
     }).join('');
+
+    grid.addEventListener('click', (ev) => {
+      const link = ev.target.closest('[data-ics-game]');
+      if (!link) return;
+      ev.preventDefault();
+      const id = link.getAttribute('data-ics-game');
+      const ics = icsByGameId[id];
+      if (!ics) return;
+      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `wwbc-game-${id}.ics`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    });
 
     return data;
   } catch (error) {

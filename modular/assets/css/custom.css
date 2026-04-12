@@ -54,7 +54,16 @@ body {
 
 /* Hero Section */
 .hero {
-  padding: 80px 0 40px 0; /* Reduced top padding from 180px to 80px */
+  padding: 40px 0 20px 0;
+  min-height: auto;
+}
+
+.hero .hero-img {
+  margin-bottom: 0 !important;
+}
+
+.hero p {
+  margin-bottom: 14px;
 }
 
 .hero .hero-bg {
@@ -326,20 +335,37 @@ body {
 .schedule-actions {
   border-top: 1px dashed rgba(0, 0, 0, 0.08);
   padding-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.schedule-cal-link {
-  color: var(--accent-color);
-  font-size: 14px;
+.schedule-cal-label {
+  font-size: 12px;
   font-weight: 600;
-  text-decoration: none;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin-right: auto;
+  letter-spacing: 0.3px;
+}
+
+.schedule-cal-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--accent-color);
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-.schedule-cal-link:hover {
-  color: var(--highlight-color-1);
+.schedule-cal-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-2px);
 }
 
 @media (min-width: 992px) {
