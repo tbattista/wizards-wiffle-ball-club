@@ -117,10 +117,12 @@ export async function loadScheduleData() {
       return `${y}${mo}${d}T${pad(h)}${pad(m)}00`;
     };
 
+    const durationOf = g => Number.isFinite(g.durationHours) ? g.durationHours : 3;
+
     const googleHref = g => {
       const { h, m } = parseTime(g.time);
       const start = localStamp(g.dateObj, h, m);
-      const end = localStamp(g.dateObj, h + 3, m);
+      const end = localStamp(g.dateObj, h + durationOf(g), m);
       const text = encodeURIComponent(`Wizards Wiffle Ball: ${g.opponent}`);
       const location = encodeURIComponent(`${g.location}, 1 W Pontiac St, Warwick, RI 02886`);
       return `https://www.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${start}/${end}&location=${location}`;
@@ -129,7 +131,7 @@ export async function loadScheduleData() {
     const icsContent = g => {
       const { h, m } = parseTime(g.time);
       const start = localStamp(g.dateObj, h, m);
-      const end = localStamp(g.dateObj, h + 3, m);
+      const end = localStamp(g.dateObj, h + durationOf(g), m);
       const stamp = localStamp(new Date(), new Date().getHours(), new Date().getMinutes());
       const uid = `wwbc-${g.id}-${start}@wizardswiffleball`;
       return [
@@ -152,7 +154,7 @@ export async function loadScheduleData() {
     };
 
     const icsByGameId = {};
-    games.forEach(g => { icsByGameId[g.id] = icsContent(g); });
+    games.forEach(g => { if (!g.tbd) icsByGameId[g.id] = icsContent(g); });
 
     grid.innerHTML = games.map((g, i) => {
       const isNext = i === nextIdx;
@@ -177,13 +179,17 @@ export async function loadScheduleData() {
               <div><i class="bi bi-geo-alt"></i> ${escape(g.location)}</div>
             </div>
             <div class="schedule-actions">
-              <span class="schedule-cal-label">Add to Calendar:</span>
-              <a class="schedule-cal-btn" href="${googleHref(g)}" target="_blank" rel="noopener" title="Google Calendar" aria-label="Add to Google Calendar">
-                <i class="bi bi-google"></i>
-              </a>
-              <a class="schedule-cal-btn" href="#" data-ics-game="${g.id}" title="Apple Calendar / .ics" aria-label="Download .ics for Apple Calendar">
-                <i class="bi bi-apple"></i>
-              </a>
+              ${g.tbd ? `
+                <span class="schedule-cal-label schedule-cal-label--muted"><i class="bi bi-hourglass-split"></i> Details TBD</span>
+              ` : `
+                <span class="schedule-cal-label">Add to Calendar:</span>
+                <a class="schedule-cal-btn" href="${googleHref(g)}" target="_blank" rel="noopener" title="Google Calendar" aria-label="Add to Google Calendar">
+                  <i class="bi bi-google"></i>
+                </a>
+                <a class="schedule-cal-btn" href="#" data-ics-game="${g.id}" title="Apple Calendar / .ics" aria-label="Download .ics for Apple Calendar">
+                  <i class="bi bi-apple"></i>
+                </a>
+              `}
             </div>
           </div>
         </div>

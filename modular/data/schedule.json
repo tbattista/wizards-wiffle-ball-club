@@ -28,6 +28,7 @@
       "date": "2026-07-25",
       "dateDisplay": "Jul 25",
       "time": "12:00 PM",
+      "durationHours": 4,
       "opponent": "Mid-Summer Classic",
       "homeAway": "home",
       "location": "West Fenway Park",
@@ -35,21 +36,11 @@
       "result": null
     },
     {
-      "id": 4,
-      "date": "2026-08-09",
-      "dateDisplay": "Aug 9",
-      "time": "4:05 PM",
-      "opponent": "Dog Days Doubleheader",
-      "homeAway": "home",
-      "location": "West Fenway Park",
-      "status": "upcoming",
-      "result": null
-    },
-    {
       "id": 5,
-      "date": "2026-09-13",
-      "dateDisplay": "Sep 13",
-      "time": "3:05 PM",
+      "date": "2026-09-01",
+      "dateDisplay": "Sep TBD",
+      "time": "TBD",
+      "tbd": true,
       "opponent": "End of Summer Showdown",
       "homeAway": "home",
       "location": "West Fenway Park",

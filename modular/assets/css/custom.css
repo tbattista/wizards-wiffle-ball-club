@@ -348,6 +348,15 @@ body {
   letter-spacing: 0.3px;
 }
 
+.schedule-cal-label--muted {
+  font-style: italic;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.schedule-cal-label--muted i {
+  margin-right: 4px;
+}
+
 .schedule-cal-btn {
   display: inline-flex;
   align-items: center;
