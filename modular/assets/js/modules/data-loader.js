@@ -22,7 +22,7 @@ export async function loadEventData() {
     
     dateElements.forEach(el => el.textContent = nextGame.date);
     timeElements.forEach(el => el.textContent = nextGame.time);
-    locationElements.forEach(el => el.textContent = nextGame.location + ' - ' + nextGame.address);
+    locationElements.forEach(el => el.textContent = nextGame.address ? `${nextGame.location} - ${nextGame.address}` : nextGame.location);
     
     return data;
   } catch (error) {
