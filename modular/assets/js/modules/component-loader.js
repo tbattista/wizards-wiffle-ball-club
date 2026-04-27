@@ -40,6 +40,7 @@ export function loadAllComponents() {
     loadComponent('header-container', 'components/header.html'),
     loadComponent('hero-container', 'components/hero.html'),
     loadComponent('schedule-container', 'components/schedule.html'),
+    loadComponent('new-2026-container', 'components/new-2026.html'),
     loadComponent('rsvp-container', 'components/rsvp.html'),
     loadComponent('game-setup-container', 'components/game-setup.html'),
     loadComponent('rules-container', 'components/rules.html'),
