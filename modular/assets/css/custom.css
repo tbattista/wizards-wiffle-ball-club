@@ -377,6 +377,35 @@ body {
   transform: translateY(-2px);
 }
 
+.schedule-print-btn {
+  margin-top: 10px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--accent-color);
+  border-radius: 6px;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 92%);
+  color: var(--accent-color);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.schedule-print-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  transform: translateY(-1px);
+}
+
+.schedule-print-btn i {
+  font-size: 15px;
+}
+
 @media (min-width: 992px) {
   .rsvp-section .col-lg-10 {
     flex: 0 0 100%;

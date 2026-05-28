@@ -2,6 +2,7 @@
  * Data Loader Module for Wizards Wiffle Ball Club
  * Handles loading and displaying data from JSON files
  */
+import { openGamePrintout } from './game-printout.js';
 
 /**
  * Load event data and update the DOM
@@ -119,12 +120,17 @@ export async function loadScheduleData() {
 
     const durationOf = g => Number.isFinite(g.durationHours) ? g.durationHours : 3;
 
+    const fullLocation = g => g.address ? `${g.location}, ${g.address}` : g.location;
+    const icsLocation = g => g.address
+      ? `${g.location}\\, ${g.address.replace(/,/g, '\\,')}`
+      : g.location;
+
     const googleHref = g => {
       const { h, m } = parseTime(g.time);
       const start = localStamp(g.dateObj, h, m);
       const end = localStamp(g.dateObj, h + durationOf(g), m);
       const text = encodeURIComponent(`Wizards Wiffle Ball: ${g.opponent}`);
-      const location = encodeURIComponent(`${g.location}, 1 W Pontiac St, Warwick, RI 02886`);
+      const location = encodeURIComponent(fullLocation(g));
       return `https://www.google.com/calendar/render?action=TEMPLATE&text=${text}&dates=${start}/${end}&location=${location}`;
     };
 
@@ -146,7 +152,7 @@ export async function loadScheduleData() {
         `DTSTART:${start}`,
         `DTEND:${end}`,
         `SUMMARY:Wizards Wiffle Ball: ${g.opponent}`,
-        `LOCATION:${g.location}\\, 1 W Pontiac St\\, Warwick\\, RI 02886`,
+        `LOCATION:${icsLocation(g)}`,
         'DESCRIPTION:Wizards Wiffle Ball Club game. See wizardswiffleball.club for details.',
         'END:VEVENT',
         'END:VCALENDAR'
@@ -191,27 +197,43 @@ export async function loadScheduleData() {
                 </a>
               `}
             </div>
+            <button type="button" class="schedule-print-btn" data-print-game="${g.id}" aria-label="Print game day sheet">
+              <i class="bi bi-printer"></i> <span>Print Game Day Sheet</span>
+            </button>
           </div>
         </div>
       `;
     }).join('');
 
+    const gamesById = {};
+    games.forEach(g => { gamesById[g.id] = g; });
+
     grid.addEventListener('click', (ev) => {
-      const link = ev.target.closest('[data-ics-game]');
-      if (!link) return;
-      ev.preventDefault();
-      const id = link.getAttribute('data-ics-game');
-      const ics = icsByGameId[id];
-      if (!ics) return;
-      const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `wwbc-game-${id}.ics`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      const icsLink = ev.target.closest('[data-ics-game]');
+      if (icsLink) {
+        ev.preventDefault();
+        const id = icsLink.getAttribute('data-ics-game');
+        const ics = icsByGameId[id];
+        if (!ics) return;
+        const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `wwbc-game-${id}.ics`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+        return;
+      }
+
+      const printBtn = ev.target.closest('[data-print-game]');
+      if (printBtn) {
+        ev.preventDefault();
+        const id = printBtn.getAttribute('data-print-game');
+        const g = gamesById[id];
+        if (g) openGamePrintout(g);
+      }
     });
 
     return data;

@@ -9,6 +9,7 @@
       "opponent": "Opening Day — Birthday Cookout",
       "homeAway": "home",
       "location": "Goddard Park - Field D",
+      "address": "1095 Ives Rd, East Greenwich, RI 02818",
       "status": "upcoming",
       "result": null
     },
@@ -20,6 +21,7 @@
       "opponent": "Club Night Game",
       "homeAway": "home",
       "location": "West Fenway Park",
+      "address": "1 W Pontiac St, Warwick, RI 02886",
       "status": "upcoming",
       "result": null
     },
@@ -32,6 +34,7 @@
       "opponent": "End of Summer Showdown",
       "homeAway": "home",
       "location": "West Fenway Park",
+      "address": "1 W Pontiac St, Warwick, RI 02886",
       "status": "upcoming",
       "result": null
     },
@@ -43,6 +46,7 @@
       "opponent": "Club Championship",
       "homeAway": "home",
       "location": "West Fenway Park",
+      "address": "1 W Pontiac St, Warwick, RI 02886",
       "status": "upcoming",
       "result": null
     }
