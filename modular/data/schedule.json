@@ -8,7 +8,7 @@
       "time": "12:00 PM",
       "opponent": "Opening Day — Birthday Cookout",
       "homeAway": "home",
-      "location": "TBD",
+      "location": "Goddard Park - Field D",
       "status": "upcoming",
       "result": null
     },
@@ -18,18 +18,6 @@
       "dateDisplay": "Jun 27",
       "time": "TBD",
       "opponent": "Club Night Game",
-      "homeAway": "home",
-      "location": "West Fenway Park",
-      "status": "upcoming",
-      "result": null
-    },
-    {
-      "id": 3,
-      "date": "2026-07-25",
-      "dateDisplay": "Jul 25",
-      "time": "12:00 PM",
-      "durationHours": 4,
-      "opponent": "Mid-Summer Classic",
       "homeAway": "home",
       "location": "West Fenway Park",
       "status": "upcoming",
