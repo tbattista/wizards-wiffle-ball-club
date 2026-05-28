@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Wizards Wiffle Ball Club — Game Day Printout</title>
+<style>
+  @page { size: letter; margin: 0.5in; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #111;
+    margin: 0;
+    padding: 24px;
+    line-height: 1.4;
+  }
+  header {
+    text-align: center;
+    border-bottom: 3px double #111;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+  }
+  h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: 1px; }
+  .subtitle { font-size: 13px; color: #555; margin: 0; }
+  .meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 8px;
+    color: #444;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 22px;
+  }
+  section.card {
+    border: 1px solid #333;
+    border-radius: 6px;
+    padding: 10px 14px;
+    page-break-inside: avoid;
+  }
+  section.card.full { grid-column: 1 / -1; }
+  h2 {
+    font-size: 15px;
+    margin: 0 0 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  ul { margin: 6px 0 0; padding-left: 18px; }
+  li { margin: 2px 0; font-size: 13px; }
+  .field-info { font-size: 13px; }
+  .field-info dt { font-weight: bold; display: inline; }
+  .field-info dd { display: inline; margin: 0 12px 0 4px; }
+  .field-info dl { margin: 4px 0; }
+  footer {
+    margin-top: 18px;
+    text-align: center;
+    font-size: 11px;
+    color: #666;
+    border-top: 1px solid #999;
+    padding-top: 8px;
+  }
+  @media print {
+    body { padding: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Wizards Wiffle Ball Club</h1>
+  <p class="subtitle">Official Game Day Rules &amp; Scoring Sheet — 2026 Season</p>
+  <div class="meta">
+    <span><strong>Field:</strong> West Fenway Park</span>
+    <span><strong>Season:</strong> 2026</span>
+  </div>
+</header>
+
+<div class="grid">
+
+  <section class="card full">
+    <h2>General Rules</h2>
+    <ul>
+      <li>Game is designed for hit and run scoring</li>
+      <li>Ties / arguments / fouls will always go to the batter and/or offense</li>
+      <li>Have fun &mdash; score runs</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Game Setup</h2>
+    <ul>
+      <li>Fun ALL AGES game (must be at least 6)</li>
+      <li>5 inning game</li>
+      <li>3 outs per inning</li>
+      <li>No gloves</li>
+      <li>Bats and balls provided</li>
+      <li>Standard yellow plastic wiffle ball bats only (taped/customized is fine)</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Batting</h2>
+    <ul>
+      <li>Only adults can strike out</li>
+      <li>Swing and miss = strike 1 or 2</li>
+      <li>Foul ball = strike 1 or 2</li>
+      <li>Third strike = swing and miss <em>or</em> hit the strike target</li>
+      <li>No walks or hit-by-pitch</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Pitching</h2>
+    <ul>
+      <li>Ball speed must be controlled and over the plate</li>
+      <li>Pitch speed should match age/skill of batter</li>
+      <li>Pitchers will be warned for too much speed or inaccuracy</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Fielding</h2>
+    <ul>
+      <li>Force outs by tagging the base</li>
+      <li>Tag outs by tagging the runner with the ball</li>
+    </ul>
+  </section>
+
+  <section class="card full">
+    <h2>Field — West Fenway Park</h2>
+    <p style="margin:4px 0 6px; font-size:13px;">Scaled dimensionally to the famed Fenway Park in Boston, MA.</p>
+    <div class="field-info">
+      <dl>
+        <dt>Left Field:</dt><dd>75 ft</dd>
+        <dt>Center Field:</dt><dd>91.5 ft</dd>
+        <dt>Right Field:</dt><dd>75 ft / 90.7 ft</dd>
+      </dl>
+      <dl>
+        <dt>Base Path:</dt><dd>45 ft</dd>
+        <dt>Pitcher's Mound:</dt><dd>25 ft</dd>
+        <dt>Fence:</dt><dd>4 ft high</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="card full">
+    <h2>Scorecard</h2>
+    <table style="width:100%; border-collapse:collapse; font-size:12px; margin-top:4px;">
+      <thead>
+        <tr>
+          <th style="border:1px solid #333; padding:4px; text-align:left; width:24%;">Team</th>
+          <th style="border:1px solid #333; padding:4px;">1</th>
+          <th style="border:1px solid #333; padding:4px;">2</th>
+          <th style="border:1px solid #333; padding:4px;">3</th>
+          <th style="border:1px solid #333; padding:4px;">4</th>
+          <th style="border:1px solid #333; padding:4px;">5</th>
+          <th style="border:1px solid #333; padding:4px; background:#eee;">R</th>
+          <th style="border:1px solid #333; padding:4px; background:#eee;">H</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="border:1px solid #333; padding:10px;">&nbsp;</td><td style="border:1px solid #333;"></td><td style="border:1px solid #333;"></td><td style="border:1px solid #333;"></td><td style="border:1px solid #333;"></td><td style="border:1px solid #333;"></td><td style="border:1px solid #333; background:#f6f6f6;"></td><td style="border:1px solid #333; background:#f6f6f6;"></td></tr>
+        <tr><td style="border:1px solid #333; padding:10px;">&nbsp;</td><td style="border:1px solid #333;"></td><td style="border:1px solid #333;"></td><td style="border:1px solid #333;"></td><td style="border:1px solid #333;"></td><td style="border:1px solid #333;"></td><td style="border:1px solid #333; background:#f6f6f6;"></td><td style="border:1px solid #333; background:#f6f6f6;"></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</div>
+
+<footer>
+  Wizards Wiffle Ball Club &mdash; Bring the bat, leave the gloves at home.
+</footer>
+
+</body>
+</html>
