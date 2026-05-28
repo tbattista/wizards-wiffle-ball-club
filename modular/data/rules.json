@@ -22,7 +22,9 @@
   "pitchingRules": [
     "Ball speed must be controlled and over the plate",
     "Pitch speed should match the age/skill of batter",
-    "Pitchers will be warned for too much speed or inaccuracy"
+    "Pitchers will be warned for too much speed or inaccuracy",
+    "Each pitcher pitches only 1 inning",
+    "Pitchers must alternate between a kid and an adult each inning"
   ],
   "fieldingRules": [
     "Force outs by tagging the base",
