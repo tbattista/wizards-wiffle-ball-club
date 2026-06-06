@@ -197,6 +197,11 @@ export async function loadScheduleData() {
                 </a>
               `}
             </div>
+            ${g.rsvpUrl ? `
+              <a class="schedule-rsvp-btn" href="${escape(g.rsvpUrl)}" target="_blank" rel="noopener">
+                <i class="bi bi-pencil-square"></i> <span>RSVP on Partiful</span>
+              </a>
+            ` : ''}
             <button type="button" class="schedule-print-btn" data-print-game="${g.id}" aria-label="Print game day sheet">
               <i class="bi bi-printer"></i> <span>Print Game Day Sheet</span>
             </button>

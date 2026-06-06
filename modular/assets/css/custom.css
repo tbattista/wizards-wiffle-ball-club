@@ -377,6 +377,35 @@ body {
   transform: translateY(-2px);
 }
 
+.schedule-rsvp-btn {
+  margin-top: 10px;
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border: 1px solid var(--highlight-color-1, var(--accent-color));
+  border-radius: 6px;
+  background-color: var(--highlight-color-1, var(--accent-color));
+  color: var(--contrast-color, #fff);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.schedule-rsvp-btn:hover {
+  filter: brightness(0.92);
+  transform: translateY(-1px);
+  color: var(--contrast-color, #fff);
+}
+
+.schedule-rsvp-btn i {
+  font-size: 15px;
+}
+
 .schedule-print-btn {
   margin-top: 10px;
   width: 100%;
